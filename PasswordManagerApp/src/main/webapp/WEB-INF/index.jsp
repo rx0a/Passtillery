@@ -66,6 +66,7 @@
 		Username: ${account.username} <br>
 		Password: ${account.password} <br>
 		Notes: ${account.notes} <br>
+		Favicon Link: ${account.favicon } <br>
 		<input type="hidden"name="id" value="${account.id}"> 
 		<input type="submit" name=action value="Edit"/> 
 		<input type="submit" name=action value="Delete"/>

@@ -15,6 +15,7 @@ public class Account {
 	private String password;
 	private String url;
 	private String notes;
+	private String favicon;
 	
 	public Account() {
 	}
@@ -24,6 +25,14 @@ public class Account {
 		this.password = password;
 		this.url = url;
 		this.notes = notes;
+	}
+	public Account(String name, String username, String password, String url, String notes, String favicon) {
+		this.name = name;
+		this.username = username;
+		this.password = password;
+		this.url = url;
+		this.notes = notes;
+		this.favicon = favicon;
 	}
 	public int getId() {
 		return id;
@@ -60,6 +69,12 @@ public class Account {
 	}
 	public void setNotes(String notes) {
 		this.notes = notes;
+	}
+	public String getFavicon() {
+		return favicon;
+	}
+	public void setFavicon(String favicon) {
+		this.favicon = favicon;
 	}
 	@Override
 	public String toString() {

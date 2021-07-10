@@ -20,16 +20,17 @@ public class AccountController {
 		model.addAttribute("accounts", dao.accounts());
 		return "index";
 	}
-
+	
 	@RequestMapping(path = "getAccount.do", params = "keyword", method = RequestMethod.POST)
 	public String getAccount(String keyword, Model model) {
 		model.addAttribute("accounts", dao.find(keyword));
 		return "index";
 	}
-
+	
 	@RequestMapping(path = "createAccount.do", params = { "name", "username", "password", "url", "notes" }, method = RequestMethod.POST)
 	public String createAccount(String name, String username, String password, String url, String notes, Model model) {
-		Account account = new Account(name, username, password, url, notes);
+		String favicon = url + "/favicon.ico";
+		Account account = new Account(name, username, password, url, notes, favicon);
 		dao.create(account);
 		model.addAttribute("accounts", dao.accounts());
 		return "index";
@@ -37,12 +38,10 @@ public class AccountController {
 	
 	@RequestMapping(path = "editAccount.do", params = { "action", "id", "name", "username", "password", "url", "notes" }, method = RequestMethod.POST)
 	public String editAccount(int id, String action, String name, String username, String password, String url, String notes, Model model) {
-		
 		if (action.equals("Edit")) {
 			Account account = new Account(name, username, password, url, notes);
 			dao.update(id, account);
-		}
-		else if (action.equals("Delete")) {
+		} else if (action.equals("Delete")) {
 			dao.destroy(id);
 		}
 		model.addAttribute("accounts", dao.accounts());

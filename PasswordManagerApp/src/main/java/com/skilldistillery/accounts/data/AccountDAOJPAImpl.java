@@ -20,7 +20,6 @@ public class AccountDAOJPAImpl implements AccountDAO {
 	@Override
 	public Account display(int id) {
 		EntityManager em = emf.createEntityManager();
-//		System.out.println(em.find(Account.class, id));
 		return em.find(Account.class, id);
 	}
 
