@@ -26,7 +26,8 @@ This Java application runs on an Apache Tomcat webserver or a similar webserver 
 MVC Design pattern and Spring boot is a very good combination to develop web based Java applications.
 
 ### Upcoming Features
-- [ ] Secure password generator update and account creation.
+- [ ] Add pictures to README
+- [ ] Secure password generator update and account creation
 - [ ] User signup/login
 - [ ] Copy username and password buttons
 - [ ] Toggle button for masking password
