@@ -116,20 +116,40 @@
 										<form action="editAccount.do" method="POST">
 											<div>
 												<h5 class="mt-0">
-													<img
+													<a href="https://${account.url }"><img
 														src="https://www.google.com/s2/favicons?domain=${account.url}"
 														class="mr-3" alt="favicon">&nbsp;&nbsp;${account.name}
+														
+														</a>
 												</h5>
-												Username: ${account.username} <br> Password:
-												${account.password} <br> URL: ${account.url} <br>
-												Notes: ${account.notes} <br> <input type="hidden"
-													name="id" value="${account.id}"> <input
+	
+Username <input
+													class="form-control me-2" type="text" name="username"
+													value="${account.username}" readonly> 
+													
+													Password <input
+													class="form-control me-2" type="text" name="password"
+													value="${account.password}" readonly> 
+
+													URL   <input
+													class="form-control me-2" type="text" name="url"
+													value="<a href=${account.url }>${account.url}</a>" readonly>
+													
+													Notes  <input
+													class="form-control me-2" type="text" name="notes"
+													value="${account.notes}" readonly>  <br> 
+													
+													<input
+													type="hidden" name="id" value="${account.id}">
+													 <input
 													type="hidden" name="name" value="${account.name}">
-												<input type="hidden" name="username"
-													value="${account.username}"> <input type="hidden"
-													name="password" value="${account.password}"> <input
-													type="hidden" name="url" value="${account.url}"> <input
-													type="hidden" name="notes" value="${account.notes}">
+													<input
+													type="hidden" name="url" value="${account.url}"> 
+													<input
+													type="hidden" name="notes" value="${account.notes}"> 
+													
+													
+													
 												<button class="btn btn-outline-danger pull-right"
 													type="submit" name="action" value="Delete">Delete</button>
 												<button class="btn btn-outline-warning pull-right"
