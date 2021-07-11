@@ -6,34 +6,46 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.1.0/dist/css/bootstrap-dark.min.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<style>
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 15px;
+	width: 100%;
+	text-align: center;
+}
+</style>
 <title>Password Distillery</title>
 </head>
 <body>
+	<header class="mb-auto">
+		<div>
+			<nav class="nav nav-masthead justify-content-center float-md-end">
+			</nav>
+		</div>
+	</header>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 		crossorigin="anonymous"></script>
 	<main role="main">
-		<section class="jumbotron text-center">
+		<section style="height: 200px;" class="jumbotron text-center">
 			<div class="container">
-				<h1 class="jumbotron-heading">Password Distillery</h1>
-				<p class="lead text-muted">A functional password manager
-					prototype to keep your passwords safe and organized.</p>
+				<h1 class="jumbotron-heading ">Password Distillery</h1>
+				<br>
+				<p class="lead ">A functional password manager written in Java
+					to keep your passwords safe and organized.</p>
 			</div>
 		</section>
-		<div class="album py-5 bg-light">
+		<div class="album py-5">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4">
-						<div class="card mb-4 shadow-sm">
+					<div class="col-md-4 ">
+						<div class="card mb-4 shadow-sm ">
 							<div class="card-body">
 								<h3>New</h3>
 								<form action="createAccount.do" method="POST" id="create">
@@ -48,8 +60,8 @@
 										placeholder="URL" aria-label="URL"> Notes<br /> <input
 										class="form-control me-2" name="notes" type="text"
 										placeholder="Notes" aria-label="Notes"> <br>
-									<button class="btn btn-outline-success pull-right"
-										type="submit" form="create">Save</button>
+									<button class="btn btn-outline-info pull-right" type="submit"
+										form="create">Save</button>
 								</form>
 							</div>
 						</div>
@@ -61,7 +73,7 @@
 								<form class="d-flex" action="getAccount.do" method="POST">
 									<input class="form-control me-2" name="keyword" type="search"
 										placeholder="Search" aria-label="Search">
-									<button class="btn btn-outline-success" type="submit">Search</button>
+									<button class="btn btn-outline-light" type="submit">Search</button>
 								</form>
 								<h3></h3>
 								<div>
@@ -103,20 +115,22 @@
 											<div>
 												<img
 													src="https://www.google.com/s2/favicons?domain=${account.url}"
-													alt="favicon"> <br> <b>Name</b> <br /> <input
-													type="text" name="name" value="${account.name}"> <br />
-												<b>Username</b> <br /> <input type="text" name="username"
-													value="${account.username}"> <br /> <b>Password</b>
-												<br /> <input type="text" name="password"
-													value="${account.password}"> <br /> <b>URL</b> <br />
-												<input type="text" name="url" value="${account.url}">
-												<br /> <b>Notes</b> <br /> <input type="text" name="notes"
+													alt="favicon"> <br>Name<br /> <input
+													class="form-control me-2" type="text" name="name"
+													value="${account.name}"> Username <br /> <input
+													class="form-control me-2" type="text" name="username"
+													value="${account.username}"> Password <br /> <input
+													class="form-control me-2" type="text" name="password"
+													value="${account.password}"> URL <br /> <input
+													class="form-control me-2" type="text" name="url"
+													value="${account.url}"> Notes<br /> <input
+													class="form-control me-2" type="text" name="notes"
 													value="${account.notes}"> <br /> <input
 													type="hidden" name="id" value="${account.id}">
 
-												<button class="btn btn-outline-success pull-right"
+												<button class="btn btn-outline-danger pull-right"
 													type="submit" name="action" value="Delete" form="update">Delete</button>
-												<button class="btn btn-outline-success pull-right"
+												<button class="btn btn-outline-warning pull-right"
 													type="submit" name="action" value="Update" form="update">Update</button>
 											</div>
 										</form>
@@ -132,5 +146,11 @@
 			</div>
 		</div>
 	</main>
+	<footer class="footer">
+		<div class="container">
+			<a href="https://github.com/ryspc/JPACRUDProject">Follow the
+				development on Github</a>
+		</div>
+	</footer>
 </body>
 </html>
