@@ -12,6 +12,7 @@ Instead of memorizing all of their account information, users can add new accoun
 - Bootstrap
 - Spring Tool Suite & Spring Boot
 - Gradle
+- Hibernate
 - MySQL & MySQL Workbench
 - JDBC
 - MAMP
