@@ -52,7 +52,6 @@ public class AccountController {
 	public ModelAndView showDetails(int id, Model model) {
 		ModelAndView mv = new ModelAndView();
 		Account account = null;
-		System.out.println("this is the id: " + id);
 		account = dao.display(id);
 		mv.addObject("account", account);
 		mv.setViewName("index");

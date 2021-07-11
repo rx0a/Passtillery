@@ -19,6 +19,36 @@
 	text-align: center;
 }
 </style>
+<script>
+	function copyUsername() {
+		/* Get the text field */
+		var copyText = document.getElementById("username");
+
+		/* Select the text field */
+		copyText.select();
+		copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+		/* Copy the text inside the text field */
+		document.execCommand("copy");
+
+		/* Alert the copied text */
+		alert("Username Copied");
+	}
+	function copyPassword() {
+		/* Get the text field */
+		var copyText = document.getElementById("password");
+
+		/* Select the text field */
+		copyText.select();
+		copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+		/* Copy the text inside the text field */
+		document.execCommand("copy");
+
+		/* Alert the copied text */
+		alert("Password Copied");
+	}
+</script>
 <title>Passtillery</title>
 </head>
 <body>
@@ -113,43 +143,46 @@
 								<h3>Info</h3>
 								<c:choose>
 									<c:when test="${! empty account}">
-										<form action="editAccount.do" method="POST">
-											<div>
-												<h5 class="mt-0">
+																					<h5 class="mt-0">
 													<a href="https://${account.url }"><img
 														src="https://www.google.com/s2/favicons?domain=${account.url}"
 														class="mr-3" alt="favicon">&nbsp;&nbsp;${account.name}
-														
-														</a>
+													</a>
 												</h5>
-	
-Username <input
-													class="form-control me-2" type="text" name="username"
-													value="${account.username}" readonly> 
-													
-													Password <input
-													class="form-control me-2" type="text" name="password"
-													value="${account.password}" readonly> 
+											Username
+										<form class="d-flex" action="showDetails.do" method="POST">
+											 <input class="form-control me-2" name="username" type="text"
+												value="${account.username}" aria-label="Search"
+												id="username" readonly>
+											<button class="btn btn-outline-info" type="submit"
+												onclick="copyUsername()">&#128203;</button>
+											<input type="hidden" name="id" value="${account.id}">
+										</form>
+											Password
+										<form class="d-flex" action="showDetails.do" method="POST">
+											 <input class="form-control me-2" name="username" type="text"
+												value="${account.password}" aria-label="Search"
+												id="password" readonly>
+											<button class="btn btn-outline-info" type="submit"
+												onclick="copyPassword()">&#128203;</button>
+											<input type="hidden" name="id" value="${account.id}">
+										</form>
+										<form action="editAccount.do" method="POST">
+											<div>
 
-													URL   <input
-													class="form-control me-2" type="text" name="url"
-													value="<a href=${account.url }>${account.url}</a>" readonly>
-													
-													Notes  <input
-													class="form-control me-2" type="text" name="notes"
-													value="${account.notes}" readonly>  <br> 
-													
-													<input
-													type="hidden" name="id" value="${account.id}">
-													 <input
+												URL <input class="form-control me-2" type="text" name="url"
+													value="${account.url}" readonly>
+
+												Notes <input class="form-control me-2" type="text"
+													name="notes" value="${account.notes}" readonly> <br>
+
+												<input type="hidden" name="username"
+													value="${account.username}"> <input type="hidden"
+													name="password" value="${account.password}"> <input
+													type="hidden" name="id" value="${account.id}"> <input
 													type="hidden" name="name" value="${account.name}">
-													<input
-													type="hidden" name="url" value="${account.url}"> 
-													<input
-													type="hidden" name="notes" value="${account.notes}"> 
-													
-													
-													
+												<input type="hidden" name="url" value="${account.url}">
+												<input type="hidden" name="notes" value="${account.notes}">
 												<button class="btn btn-outline-danger pull-right"
 													type="submit" name="action" value="Delete">Delete</button>
 												<button class="btn btn-outline-warning pull-right"
@@ -168,7 +201,6 @@ Username <input
 			</div>
 		</div>
 	</main>
-
 	<footer class="footer">
 
 		<div class="container">
@@ -176,6 +208,5 @@ Username <input
 				development on Github</a>
 		</div>
 	</footer>
-
 </body>
 </html>
