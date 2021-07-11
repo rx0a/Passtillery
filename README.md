@@ -26,12 +26,11 @@ This Java application runs on an Apache Tomcat webserver or a similar webserver 
 MVC Design pattern and Spring boot is a very good combination to develop web based Java applications.
 
 ### Upcoming Features
-- [ ] Add pictures to README
-- [x] Secure password generator update and account creation
-- [ ] Hash passwords in db
+- [x] Add pictures to README
+- [x] Secure password generator
+- [x] Copy username and password buttons
 - [ ] User signup/login
-- [ ] Copy username and password buttons
+- [ ] Hash passwords in db
 - [ ] Toggle button for masking password
 - [ ] Folder/Category functionality
-- [ ] Enhanced brute force security
-- [ ] Honeypots for bots
+- [ ] Enhanced brute force security(Honeypots)
