@@ -28,24 +28,14 @@ public class AccountController {
 	}
 	
 	@RequestMapping(path = "createAccount.do", params = { "name", "username", "password", "url", "notes" }, method = RequestMethod.POST)
-	public String createAccount(String name, String username, String password, String url, String notes, Model model) {
-		String favicon = url + "/favicon.ico";
-		Account account = new Account(name, username, password, url, notes, favicon);
+	public ModelAndView createAccount(String name, String username, String password, String url, String notes, Model model) {
+		ModelAndView mv = new ModelAndView();
+		Account account = new Account(name, username, password, url, notes);
+		mv.addObject("account", account);
+		mv.setViewName("index");
 		dao.create(account);
 		model.addAttribute("accounts", dao.accounts());
-		return "index";
-	}
-	
-	@RequestMapping(path = "editAccount.do", params = { "action", "id", "name", "username", "password", "url", "notes" }, method = RequestMethod.POST)
-	public String editAccount(int id, String action, String name, String username, String password, String url, String notes, Model model) {
-		if (action.equals("Edit")) {
-			Account account = new Account(name, username, password, url, notes);
-			dao.update(id, account);
-		} else if (action.equals("Delete")) {
-			dao.destroy(id);
-		}
-		model.addAttribute("accounts", dao.accounts());
-		return "index";
+		return mv;
 	}
 	
 	@RequestMapping(path = "showDetails.do", params = "id", method = RequestMethod.POST )
@@ -60,18 +50,22 @@ public class AccountController {
 		return mv;
 	}
 	
-//	@RequestMapping(path = "updateAccount.do", params = { "id", "name", "username", "password", "url", "notes" }, method = RequestMethod.POST)
-//	public String updateAccount(int id, String name, String username, String password, String url, String notes, Model model) {
-//		Account account = new Account(name, username, password, url, notes);
-//		dao.update(id, account);
-//		model.addAttribute("accounts", dao.accounts());
-//		return "index";
-//	}
-//
-//	@RequestMapping(path = "destroyAccount.do", params = { "id" }, method = RequestMethod.POST)
-//	public String destroyAccount(int id, Model model) {
-//		dao.destroy(id);
-//		model.addAttribute("accounts", dao.accounts());
-//		return "index";
-//	}
+	@RequestMapping(path = "editAccount.do", params = { "action", "id", "name", "username", "password", "url", "notes" }, method = RequestMethod.POST)
+	public ModelAndView editAccount(int id, String action,String name, String username, String password, String url, String notes, Model model) {
+		ModelAndView mv = new ModelAndView();
+		if (action.equals("Edit")) {
+			mv.addObject("account", dao.display(id));
+			mv.setViewName("update");
+		} else if (action.equals("Delete")) {
+			dao.destroy(id);
+			mv.setViewName("index");
+		} else if (action.equals("Update")) {
+			Account account = new Account(name, username, password, url, notes);
+			dao.update(id, account);
+			mv.addObject("account", dao.display(id));
+			mv.setViewName("index");
+		}
+		model.addAttribute("accounts", dao.accounts());
+		return mv;
+	}
 }

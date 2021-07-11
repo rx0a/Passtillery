@@ -47,7 +47,6 @@ public class AccountDAOJPAImpl implements AccountDAO {
 		em.persist(account);
 		em.flush();
 		em.getTransaction().commit();
-		em.close();
 		return account;
 	}
 
@@ -55,16 +54,16 @@ public class AccountDAOJPAImpl implements AccountDAO {
 	public Account update(int id, Account account) {
 		EntityManager em = emf.createEntityManager();
 		Account dbAccount = em.find(Account.class, id);
+		System.out.println("before change: " + dbAccount);
 		em.getTransaction().begin();
 		dbAccount.setName(account.getName());
 		dbAccount.setUsername(account.getUsername());
 		dbAccount.setPassword(account.getPassword());
 		dbAccount.setUrl(account.getUrl());
 		dbAccount.setNotes(account.getNotes());
-		em.persist(account);
 		em.flush();
 		em.getTransaction().commit();
-		em.close();
+		System.out.println("after change: " + dbAccount);
 		return dbAccount;
 	}
 
@@ -76,7 +75,6 @@ public class AccountDAOJPAImpl implements AccountDAO {
 		em.remove(account);
 		boolean deleted = !em.contains(account);
 		em.getTransaction().commit();
-		em.close();
 		return deleted;
 	}
 }
