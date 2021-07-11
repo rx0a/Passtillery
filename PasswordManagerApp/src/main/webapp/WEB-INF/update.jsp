@@ -43,9 +43,9 @@
 	<form action="showDetails.do" method="POST">
 	<div>
 		<input type="hidden"name="id" value="${account.id}"> 
-		Favicon: <img src="https://www.google.com/s2/favicons?domain=${account.url}" alt="favicon">
-		Name: ${account.name} <br>
-		Username: ${account.username} <br>
+		<img src="https://www.google.com/s2/favicons?domain=${account.url}" alt="favicon">
+		${account.name} <br>
+		${account.username} <br>
 		<input type="submit" value="details"/> 
 	</div>
 	</form>
@@ -63,6 +63,7 @@
 	<c:when test="${! empty account}">
 	<form action="editAccount.do" method="POST" id="update">
 	<div>
+		<img src="https://www.google.com/s2/favicons?domain=${account.url}" alt="favicon"> <br>
 		<b>Name</b> <br />
 		<input type="text" name="name" value="${account.name}" > <br />
 		<b>Username</b> <br />
