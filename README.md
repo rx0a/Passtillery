@@ -1,4 +1,4 @@
-# JPACRUDProject
+# JPACRUDProject (Passtillery)
 
 ### Overview
 This is a full stack Java application and implements web-based C.R.U.D. functionality, utilizing Spring MVC boot and the DAO pattern. The project utilizes hibernate to control the DAO implementation and JDBC to persist and retrieve data through MySQL.
