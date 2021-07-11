@@ -19,7 +19,7 @@
 	text-align: center;
 }
 </style>
-<title>Password Distillery</title>
+<title>Passtillery</title>
 </head>
 <body>
 	<header class="mb-auto">
@@ -35,7 +35,7 @@
 	<main role="main">
 		<section style="height: 200px;" class="jumbotron text-center">
 			<div class="container">
-				<h1 class="jumbotron-heading ">Password Distillery</h1>
+				<h1 class="jumbotron-heading ">Passtillery</h1>
 				<br>
 				<p class="lead ">A functional password manager written in Java
 					to keep your passwords safe and organized.</p>
@@ -60,8 +60,10 @@
 										placeholder="URL" aria-label="URL"> Notes<br /> <input
 										class="form-control me-2" name="notes" type="text"
 										placeholder="Notes" aria-label="Notes"> <br>
+									<button class="btn btn-outline-light pull-left" type="submit"
+										name="action" value="GeneratePassword" form="create">Generate</button>
 									<button class="btn btn-outline-info pull-right" type="submit"
-										form="create">Save</button>
+										name="action" value="Save" form="create">Save</button>
 								</form>
 							</div>
 						</div>
@@ -108,7 +110,7 @@
 					<div class="col-md-4">
 						<div class="card mb-4 shadow-sm">
 							<div class="card-body">
-								<h3>Detailed Info</h3>
+								<h3>Info</h3>
 								<c:choose>
 									<c:when test="${! empty account}">
 										<form action="editAccount.do" method="POST" id="update">
@@ -128,6 +130,9 @@
 													value="${account.notes}"> <br /> <input
 													type="hidden" name="id" value="${account.id}">
 
+												<button class="btn btn-outline-light pull-left"
+													type="submit" name="action" value="GeneratePassword"
+													form="update">Generate</button>
 												<button class="btn btn-outline-danger pull-right"
 													type="submit" name="action" value="Delete" form="update">Delete</button>
 												<button class="btn btn-outline-warning pull-right"

@@ -50,16 +50,19 @@
 								<h3>New</h3>
 								<form action="createAccount.do" method="POST" id="create">
 									Name <br /> <input class="form-control me-2" name="name"
-										type="text" placeholder="Name" aria-label="Name">
-									Username <br /> <input class="form-control me-2"
-										name="username" type="text" placeholder="Username"
+										type="text" placeholder="Name" value="${account.name}"
+										aria-label="Name"> Username <br /> <input
+										class="form-control me-2" name="username" type="text"
+										placeholder="Username" value="${account.username}"
 										aria-label="Username"> Password <br /> <input
 										class="form-control me-2" name="password" type="text"
-										placeholder="Password" aria-label="Password"> URL<br>
-									<input class="form-control me-2" name="url" type="text"
-										placeholder="URL" aria-label="URL"> Notes<br /> <input
-										class="form-control me-2" name="notes" type="text"
-										placeholder="Notes" aria-label="Notes"> <br>
+										placeholder="Password" value="${account.password}"
+										aria-label="Password"> URL<br> <input
+										class="form-control me-2" name="url" type="text"
+										placeholder="URL" value="${account.url}" aria-label="URL">
+									Notes<br /> <input class="form-control me-2" name="notes"
+										type="text" placeholder="Notes" value="${account.notes}"
+										aria-label="Notes"> <br>
 									<button class="btn btn-outline-light pull-left" type="submit"
 										name="action" value="GeneratePassword" form="create">Generate</button>
 									<button class="btn btn-outline-info pull-right" type="submit"
@@ -113,29 +116,7 @@
 								<h3>Info</h3>
 								<c:choose>
 									<c:when test="${! empty account}">
-										<form action="editAccount.do" method="POST">
-											<div>
-												<h5 class="mt-0">
-													<img
-														src="https://www.google.com/s2/favicons?domain=${account.url}"
-														class="mr-3" alt="favicon">&nbsp;&nbsp;${account.name}
-												</h5>
-												Username: ${account.username} <br> Password:
-												${account.password} <br> URL: ${account.url} <br>
-												Notes: ${account.notes} <br> <input type="hidden"
-													name="id" value="${account.id}"> <input
-													type="hidden" name="name" value="${account.name}">
-												<input type="hidden" name="username"
-													value="${account.username}"> <input type="hidden"
-													name="password" value="${account.password}"> <input
-													type="hidden" name="url" value="${account.url}"> <input
-													type="hidden" name="notes" value="${account.notes}">
-												<button class="btn btn-outline-danger pull-right"
-													type="submit" name="action" value="Delete">Delete</button>
-												<button class="btn btn-outline-warning pull-right"
-													type="submit" name="action" value="Edit">Edit</button>
-											</div>
-										</form>
+										<p>No account selected</p>
 									</c:when>
 									<c:otherwise>
 										<p>No account selected</p>
