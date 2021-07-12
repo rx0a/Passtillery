@@ -15,8 +15,13 @@ import com.skilldistillery.accounts.entities.Account;
 public class AccountController {
 	@Autowired
 	private AccountDAO dao;
+	
+	@RequestMapping(path = {"/"})
+	public String login(Model model) {
+		return "login";
+	}
 
-	@RequestMapping(path = { "/", "index.do" })
+	@RequestMapping(path = { "index.do" })
 	public String index(Model model) {
 		model.addAttribute("accounts", dao.accounts());
 		return "index";

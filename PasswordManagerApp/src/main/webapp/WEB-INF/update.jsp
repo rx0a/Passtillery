@@ -151,7 +151,7 @@
 													value="${account.notes}"> <br /> <input
 													type="hidden" name="id" value="${account.id}">
 
-												<button class="btn btn-outline-danger pull-right"
+												<button class="btn btn-outline-danger pull-left"
 													type="submit" name="action" value="Delete" form="update">
 													<i class="fa fa-trash" aria-hidden="true"></i>
 												</button>

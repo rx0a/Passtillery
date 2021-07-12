@@ -197,7 +197,7 @@
 													type="hidden" name="name" value="${account.name}">
 												<input type="hidden" name="url" value="${account.url}">
 												<input type="hidden" name="notes" value="${account.notes}">
-												<button class="btn btn-outline-danger pull-right"
+												<button class="btn btn-outline-danger pull-left"
 													type="submit" name="action" value="Delete">
 													<i class="fa fa-trash" aria-hidden="true"></i>
 												</button>

@@ -15,7 +15,6 @@ public class Account {
 	private String password;
 	private String url;
 	private String notes;
-	private String favicon;
 	
 	public Account() {
 	}
@@ -62,12 +61,7 @@ public class Account {
 	public void setNotes(String notes) {
 		this.notes = notes;
 	}
-	public String getFavicon() {
-		return favicon;
-	}
-	public void setFavicon(String favicon) {
-		this.favicon = favicon;
-	}
+
 	@Override
 	public String toString() {
 		return "Account [id=" + id + ", name=" + name + ", username=" + username + ", password=" + password + ", url="
