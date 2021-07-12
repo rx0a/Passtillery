@@ -29,8 +29,11 @@ MVC Design pattern and Spring boot is a very good combination to develop web bas
 - [x] Add pictures to README
 - [x] Secure password generator
 - [x] Copy username and password buttons
-- [ ] User signup/login
+- [x] User signup/login
 - [ ] Hash passwords in db
 - [ ] Toggle button for masking password
 - [ ] Folder/Category functionality
 - [ ] Enhanced brute force security(Honeypots)
+
+### Screenshots
+![Screen Shot 2021-07-11 at 7 21 32 PM](https://user-images.githubusercontent.com/83374176/125217248-6cdacc80-e27d-11eb-8874-bdd382e6ffb9.png)
