@@ -1,5 +1,11 @@
 # JPACRUDProject (Passtillery)
 
+### Demo
+
+Use any fake e-mail & password for login.
+
+[Passtillery Demo Site](http://52.8.239.60:8080/PasswordManagerApp/)
+
 ### Overview
 This is a full stack Java application and implements web-based C.R.U.D. functionality, utilizing Spring MVC boot and the DAO pattern. The project utilizes hibernate to control the DAO implementation and JDBC to persist and retrieve data through MySQL.
 
