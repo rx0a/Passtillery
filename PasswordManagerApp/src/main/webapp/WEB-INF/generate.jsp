@@ -38,7 +38,7 @@
 				<h1 class="jumbotron-heading ">Passtillery</h1>
 				<br>
 				<p class="lead ">A functional password manager written in Java
-					to keep your passwords safe and organized.</p>
+					to keep your accounts safe and organized.</p>
 			</div>
 		</section>
 		<div class="album py-5 ">
@@ -54,19 +54,30 @@
 										aria-label="Name"> Username <br /> <input
 										class="form-control me-2" name="username" type="text"
 										placeholder="Username" value="${account.username}"
-										aria-label="Username"> Password <br /> <input
-										class="form-control me-2" name="password" type="text"
-										placeholder="Password" value="${account.password}"
-										aria-label="Password"> URL<br> <input
-										class="form-control me-2" name="url" type="text"
-										placeholder="URL" value="${account.url}" aria-label="URL">
-									Notes<br /> <input class="form-control me-2" name="notes"
-										type="text" placeholder="Notes" value="${account.notes}"
+										aria-label="Username"> Password <br>
+
+									<div class="input-group mb-3">
+										<input class="form-control me-2" name="password" type="text"
+											placeholder="Password" value="${account.password}"
+											aria-label="Password">
+										<div class="input-group-append">
+											<button class="btn btn-outline-light" type="submit"
+												name="action" value="GeneratePassword" form="create">
+												<i class="fa fa-refresh"></i>
+											</button>
+										</div>
+									</div>
+									URL<br> <input class="form-control me-2" name="url"
+										type="text" placeholder="URL" value="${account.url}"
+										aria-label="URL"> Notes<br /> <input
+										class="form-control me-2" name="notes" type="text"
+										placeholder="Notes" value="${account.notes}"
 										aria-label="Notes"> <br>
-									<button class="btn btn-outline-light pull-left" type="submit"
-										name="action" value="GeneratePassword" form="create">Generate</button>
+
 									<button class="btn btn-outline-info pull-right" type="submit"
-										name="action" value="Save" form="create">Save</button>
+										name="action" value="Save" form="create">
+										<i class="fa fa-check" aria-hidden="true"></i>
+									</button>
 								</form>
 							</div>
 						</div>
@@ -78,7 +89,9 @@
 								<form class="d-flex" action="getAccount.do" method="POST">
 									<input class="form-control me-2" name="keyword" type="search"
 										placeholder="Search" aria-label="Search">
-									<button class="btn btn-outline-light" type="submit">Search</button>
+									<button class="btn btn-outline-light" type="submit">
+										<i class="fa fa-search" aria-hidden="true"></i>
+									</button>
 								</form>
 								<h3></h3>
 								<div>
@@ -134,7 +147,9 @@
 
 		<div class="container">
 			<a href="https://github.com/ryspc/JPACRUDProject">Follow the
-				development on Github</a>
+				development on Github &nbsp;<i class="fa fa-github"
+				aria-hidden="true"></i>
+			</a>
 		</div>
 	</footer>
 

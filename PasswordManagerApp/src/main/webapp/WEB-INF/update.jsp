@@ -38,7 +38,7 @@
 				<h1 class="jumbotron-heading ">Passtillery</h1>
 				<br>
 				<p class="lead ">A functional password manager written in Java
-					to keep your passwords safe and organized.</p>
+					to keep your accounts safe and organized.</p>
 			</div>
 		</section>
 		<div class="album py-5">
@@ -53,17 +53,28 @@
 										type="text" placeholder="Name" aria-label="Name">
 									Username <br /> <input class="form-control me-2"
 										name="username" type="text" placeholder="Username"
-										aria-label="Username"> Password <br /> <input
-										class="form-control me-2" name="password" type="text"
-										placeholder="Password" aria-label="Password"> URL<br>
-									<input class="form-control me-2" name="url" type="text"
-										placeholder="URL" aria-label="URL"> Notes<br /> <input
-										class="form-control me-2" name="notes" type="text"
+										aria-label="Username"> Password <br>
+
+									<div class="input-group mb-3">
+										<input class="form-control me-2" name="password" type="text"
+											placeholder="Password" aria-label="Password">
+										<div class="input-group-append">
+											<button class="btn btn-outline-light" type="submit"
+												name="action" value="GeneratePassword" form="create">
+												<i class="fa fa-refresh"></i>
+											</button>
+										</div>
+									</div>
+
+									URL<br> <input class="form-control me-2" name="url"
+										type="text" placeholder="URL" aria-label="URL"> Notes<br />
+									<input class="form-control me-2" name="notes" type="text"
 										placeholder="Notes" aria-label="Notes"> <br>
-									<button class="btn btn-outline-light pull-left" type="submit"
-										name="action" value="GeneratePassword" form="create">Generate</button>
+
 									<button class="btn btn-outline-info pull-right" type="submit"
-										name="action" value="Save" form="create">Save</button>
+										name="action" value="Save" form="create">
+										<i class="fa fa-check" aria-hidden="true"></i>
+									</button>
 								</form>
 							</div>
 						</div>
@@ -75,7 +86,9 @@
 								<form class="d-flex" action="getAccount.do" method="POST">
 									<input class="form-control me-2" name="keyword" type="search"
 										placeholder="Search" aria-label="Search">
-									<button class="btn btn-outline-light" type="submit">Search</button>
+									<button class="btn btn-outline-light" type="submit">
+										<i class="fa fa-search" aria-hidden="true"></i>
+									</button>
 								</form>
 								<h3></h3>
 								<div>
@@ -110,7 +123,7 @@
 					<div class="col-md-4">
 						<div class="card mb-4 shadow-sm">
 							<div class="card-body">
-								<h3>Info</h3>
+								<h3>Edit</h3>
 								<c:choose>
 									<c:when test="${! empty account}">
 										<form action="editAccount.do" method="POST" id="update">
@@ -121,22 +134,31 @@
 													class="form-control me-2" type="text" name="name"
 													value="${account.name}"> Username <br /> <input
 													class="form-control me-2" type="text" name="username"
-													value="${account.username}"> Password <br /> <input
-													class="form-control me-2" type="text" name="password"
-													value="${account.password}"> URL <br /> <input
-													class="form-control me-2" type="text" name="url"
-													value="${account.url}"> Notes<br /> <input
+													value="${account.username}"> Password
+												<div class="input-group mb-3">
+													<input class="form-control me-2" type="text"
+														name="password" value="${account.password}">
+													<div class="input-group-append">
+														<button class="btn btn-outline-light" type="submit"
+															name="action" value="GeneratePassword" form="update">
+															<i class="fa fa-refresh"></i>
+														</button>
+													</div>
+												</div>
+												URL <br /> <input class="form-control me-2" type="text"
+													name="url" value="${account.url}"> Notes<br /> <input
 													class="form-control me-2" type="text" name="notes"
 													value="${account.notes}"> <br /> <input
 													type="hidden" name="id" value="${account.id}">
 
-												<button class="btn btn-outline-light pull-left"
-													type="submit" name="action" value="GeneratePassword"
-													form="update">Generate</button>
 												<button class="btn btn-outline-danger pull-right"
-													type="submit" name="action" value="Delete" form="update">Delete</button>
-												<button class="btn btn-outline-warning pull-right"
-													type="submit" name="action" value="Update" form="update">Update</button>
+													type="submit" name="action" value="Delete" form="update">
+													<i class="fa fa-trash" aria-hidden="true"></i>
+												</button>
+												<button class="btn btn-outline-info pull-right"
+													type="submit" name="action" value="Update" form="update">
+													<i class="fa fa-check" aria-hidden="true"></i>
+												</button>
 											</div>
 										</form>
 									</c:when>
@@ -154,7 +176,9 @@
 	<footer class="footer">
 		<div class="container">
 			<a href="https://github.com/ryspc/JPACRUDProject">Follow the
-				development on Github</a>
+				development on Github &nbsp;<i class="fa fa-github"
+				aria-hidden="true"></i>
+			</a>
 		</div>
 	</footer>
 </body>
