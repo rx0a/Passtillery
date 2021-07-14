@@ -7,7 +7,7 @@ Use any fake e-mail & password for login.
 [Passtillery Demo Site](http://52.8.239.60:8080/PasswordManagerApp/)
 
 ### Overview
-This is a full stack Java application and implements web-based C.R.U.D. functionality, utilizing Spring MVC boot and the DAO pattern. The project utilizes hibernate to control the DAO implementation and JDBC to persist and retrieve data through MySQL.
+This is a full stack Java application and implements web-based C.R.U.D. functionality, utilizing Spring MVC boot and the DAO pattern. The project utilizes hibernate to control the JDBC to persist and retrieve data through MySQL.
 
 ### Functionality
 Instead of memorizing all of their account information, users can add new accounts, retreive, update, and delete existing information. Accounts are listed in the central column and their details are displayed on the right column. Favicons are also gathered and displayed according to the account URL.
