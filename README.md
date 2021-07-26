@@ -9,8 +9,8 @@ Instead of memorizing all of their account information, users can add new accoun
 ### Technologies Used
 - Java 1.8
 - HTML, CSS, XML
-- Bootstrap
-- Spring Tool Suite & Spring Boot
+- Bootstrap 5
+- Spring Framework & Spring Boot
 - Gradle
 - Hibernate
 - MySQL & MySQL Workbench
@@ -20,7 +20,8 @@ Instead of memorizing all of their account information, users can add new accoun
 - AWS EC2
 
 ### How to Run
-Use any fake e-mail & password for login.
+NOTE: Use any fake e-mail & password for login.
+
 [Passtillery Demo Site](http://52.8.239.60:8080/PasswordManagerApp/)
 
 ### Upcoming Features
