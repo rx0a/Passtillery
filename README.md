@@ -18,13 +18,13 @@ Instead of memorizing all of their account information, users can add new accoun
 - MAMP
 - Apache Tomcat 8.5
 - AWS EC2
-
+<!-- 
 ### How to Run
 NOTE: Use any fake e-mail & password for login.
 
-[Passtillery Demo Site](http://52.8.239.60:8080/PasswordManagerApp/)
+[Passtillery Demo Site](http://52.8.239.60:8080/PasswordManagerApp/) -->
 
-### Upcoming Features
+<!-- ### Upcoming Features
 - [x] Add pictures to README
 - [x] Secure password generator
 - [x] Copy username and password buttons
@@ -32,7 +32,7 @@ NOTE: Use any fake e-mail & password for login.
 - [ ] Hash passwords in db
 - [ ] Toggle button for masking password
 - [ ] Folder/Category functionality
-- [ ] Enhanced brute force security(Honeypots)
+- [ ] Enhanced brute force security(Honeypots) -->
 
 ### Lessons Learned
 MVC Design pattern and Spring boot is a very good combination to develop web based Java applications.
