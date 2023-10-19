@@ -20,8 +20,8 @@ Instead of memorizing all of their account information, users can add new accoun
 - AWS EC2
 
 ### Features
-- Secure password generator
-- Copy username and password buttons
+- Built-in secure password generator
+- Copy username and copy password buttons
 - User signup/login
 
 ### Lessons Learned
